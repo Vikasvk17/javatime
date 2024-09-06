@@ -6,19 +6,17 @@
     <packaging>pom</packaging>
     <version>0.5.0-SNAPSHOT</version>
     <name>Time Tracker (Parent)</name>
-    <description>
-        This is a simple Maven / Java web project.
-    </description>
+    <description>This is a simple Maven / Java web project.</description>
     <inceptionYear>2017</inceptionYear>
     <url>http://taylor.training/</url>
 
     <properties>
-        <spring.version>5.0.2.RELEASE</spring.version> <!-- Consider updating Spring version -->
+        <spring.version>5.3.26</spring.version> <!-- Updated Spring version -->
         <java.version>21</java.version>
-        <junit.version>4.13.2</junit.version> <!-- Latest JUnit 4.x version -->
-        <findbugs.version>3.0.5</findbugs.version> <!-- Deprecated, consider migrating to SpotBugs -->
-        <pmd.version>6.52.0</pmd.version> <!-- Updated PMD version -->
-        <checkstyle.version>10.12.0</checkstyle.version> <!-- Updated Checkstyle version -->
+        <junit.version>4.13.2</junit.version>
+        <spotbugs.version>4.7.3</spotbugs.version> <!-- SpotBugs version -->
+        <pmd.version>6.54.0</pmd.version> <!-- Updated PMD version -->
+        <checkstyle.version>10.12.0</checkstyle.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -33,7 +31,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.10.1</version> <!-- Updated to support Java 21 -->
+                    <version>3.10.1</version>
                     <configuration>
                         <verbose>true</verbose>
                         <fork>true</fork>
@@ -44,7 +42,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.7.3.3</version> <!-- Replacing FindBugs with SpotBugs -->
+                    <version>${spotbugs.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
