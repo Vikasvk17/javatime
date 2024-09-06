@@ -13,12 +13,12 @@
     <url>http://taylor.training/</url>
 
     <properties>
-        <spring.version>5.0.2.RELEASE</spring.version>
-        <java.version>1.8</java.version>
-        <junit.version>4.12</junit.version>
-        <findbugs.version>3.0.5</findbugs.version>
-        <pmd.version>3.8</pmd.version>
-        <checkstyle.version>2.17</checkstyle.version>
+        <spring.version>5.0.2.RELEASE</spring.version> <!-- Consider updating Spring version -->
+        <java.version>21</java.version>
+        <junit.version>4.13.2</junit.version> <!-- Latest JUnit 4.x version -->
+        <findbugs.version>3.0.5</findbugs.version> <!-- Deprecated, consider migrating to SpotBugs -->
+        <pmd.version>6.52.0</pmd.version> <!-- Updated PMD version -->
+        <checkstyle.version>10.12.0</checkstyle.version> <!-- Updated Checkstyle version -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -33,7 +33,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.6.1</version>
+                    <version>3.10.1</version> <!-- Updated to support Java 21 -->
                     <configuration>
                         <verbose>true</verbose>
                         <fork>true</fork>
@@ -42,9 +42,9 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${findbugs.version}</version>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>4.7.3.3</version> <!-- Replacing FindBugs with SpotBugs -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -63,8 +63,8 @@
     <reporting>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
                 <configuration>
                     <effort>Max</effort>
                     <threshold>Low</threshold>
